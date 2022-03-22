@@ -20,7 +20,7 @@ public class PhoneEntity {
     @Column(name = "phone_id")
     private Long phoneId;
 
-    @Column(nullable = false, unique = true)
+    @Column(length = 30, nullable = false, unique = true)
     private String number;
 
     private String type;
