@@ -24,4 +24,7 @@ public class DirectionEntity {
     private String name;
 
     private String type;
+
+    @Column(name = "contact_id")
+    private Long contactId;
 }

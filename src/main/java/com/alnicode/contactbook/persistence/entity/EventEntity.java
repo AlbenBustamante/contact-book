@@ -25,4 +25,7 @@ public class EventEntity {
     private LocalDate date;
 
     private String type;
+
+    @Column(name = "contact_id")
+    private Long contactId;
 }

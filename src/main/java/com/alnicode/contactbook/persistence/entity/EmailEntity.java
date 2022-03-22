@@ -24,4 +24,7 @@ public class EmailEntity {
     private String direction;
 
     private String type;
+
+    @Column(name = "contact_id")
+    private Long contactId;
 }
