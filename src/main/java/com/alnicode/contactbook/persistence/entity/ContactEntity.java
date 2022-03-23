@@ -28,4 +28,7 @@ public class ContactEntity {
 
     @OneToMany(mappedBy = "contact", cascade = {CascadeType.ALL})
     private List<PhoneEntity> phones;
+
+    @OneToMany(mappedBy = "contact", cascade = {CascadeType.ALL})
+    private List<DirectionEntity> directions;
 }
