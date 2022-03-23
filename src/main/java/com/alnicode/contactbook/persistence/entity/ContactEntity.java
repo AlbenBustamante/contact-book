@@ -37,4 +37,7 @@ public class ContactEntity {
 
     @OneToMany(mappedBy = "contact", cascade = {CascadeType.ALL})
     private List<EventEntity> events;
+
+    @OneToMany(mappedBy = "contact", cascade = {CascadeType.ALL})
+    private List<ContactsWebsiteEntity> websites;
 }
