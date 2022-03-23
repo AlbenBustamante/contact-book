@@ -34,4 +34,7 @@ public class ContactEntity {
 
     @OneToMany(mappedBy = "contact", cascade = {CascadeType.ALL})
     private List<EmailEntity> emails;
+
+    @OneToMany(mappedBy = "contact", cascade = {CascadeType.ALL})
+    private List<EventEntity> events;
 }
