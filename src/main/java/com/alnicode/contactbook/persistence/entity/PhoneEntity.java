@@ -8,6 +8,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Getter
@@ -27,4 +29,8 @@ public class PhoneEntity {
 
     @Column(name = "contact_id")
     private Long contactId;
+
+    @ManyToOne
+    @JoinColumn(name = "contact_id", insertable = false, updatable = false)
+    private ContactEntity contact;
 }
