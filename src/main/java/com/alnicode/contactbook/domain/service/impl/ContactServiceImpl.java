@@ -13,7 +13,6 @@ import java.util.Optional;
 
 @Service
 public class ContactServiceImpl implements ContactService {
-
     private static final String CONTACT_NOT_FOUND_MESSAGE = "Contact not found!";
 
     @Autowired
@@ -63,7 +62,12 @@ public class ContactServiceImpl implements ContactService {
     }
 
     @Override
-    public Contact delete(long contactId) {
-        return null;
+    public boolean delete(long contactId) {
+        try {
+            this.repository.deleteById(contactId);
+            return true;
+        } catch (Exception ex) {
+            return false;
+        }
     }
 }

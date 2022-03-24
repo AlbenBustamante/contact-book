@@ -11,5 +11,5 @@ public interface ContactService {
     Optional<Contact> getByName(String name);
     Contact save(Contact contact);
     Contact update(long contactId, Contact contact);
-    Contact delete(long contactId);
+    boolean delete(long contactId);
 }
