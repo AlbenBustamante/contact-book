@@ -28,4 +28,9 @@ public class ContactController {
     public ResponseEntity<Contact> getContact(@PathVariable("id") long contactId) {
         return ResponseEntity.of(this.service.getContact(contactId));
     }
+
+    @GetMapping("/{name}")
+    public ResponseEntity<Contact> getByName(@PathVariable("name") String name) {
+        return ResponseEntity.of(this.service.getByName(name));
+    }
 }
