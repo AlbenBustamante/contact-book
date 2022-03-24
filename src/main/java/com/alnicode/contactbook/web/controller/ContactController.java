@@ -5,6 +5,7 @@ import com.alnicode.contactbook.domain.service.ContactService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -45,5 +46,10 @@ public class ContactController {
     @PutMapping("/{id}")
     public ResponseEntity<Contact> update(@PathVariable("id") long contactId, @RequestBody Contact contact) {
         return new ResponseEntity<>(this.service.update(contactId, contact), HttpStatus.OK);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<HttpStatus> delete(@PathVariable("id") long contactId) {
+        return new ResponseEntity<>(this.service.delete(contactId) ? HttpStatus.OK : HttpStatus.NOT_FOUND);
     }
 }
