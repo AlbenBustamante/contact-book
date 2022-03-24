@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -39,5 +40,10 @@ public class ContactController {
     @PostMapping
     public ResponseEntity<Contact> save(@RequestBody Contact contact) {
         return new ResponseEntity<>(this.service.save(contact), HttpStatus.CREATED);
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<Contact> update(@PathVariable("id") long contactId, @RequestBody Contact contact) {
+        return new ResponseEntity<>(this.service.update(contactId, contact), HttpStatus.OK);
     }
 }
